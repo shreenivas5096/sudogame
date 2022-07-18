@@ -52,7 +52,7 @@
     margin-bottom: 80px;
 }
 
-#GetPuzzle,#SolvePuzzle{
+#GetPuzzleEasy,#GetPuzzleMedium,#GetPuzzleHard,#SolvePuzzle{
     display: inline-block;
     text-decoration: none;
     color: #fff;

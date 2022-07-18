@@ -25,7 +25,7 @@ function FillBoard(board) {
 let GetPuzzle = document.getElementById('GetPuzzle')
 let SolvePuzzle = document.getElementById('SolvePuzzle')
 
-GetPuzzle.onclick = function () {
+GetPuzzleEasy.onclick = function () {
 	var xhrRequest = new XMLHttpRequest()
 	xhrRequest.onload = function () {
 		var response = JSON.parse(xhrRequest.response)
@@ -34,6 +34,30 @@ GetPuzzle.onclick = function () {
 		FillBoard(board)
 	}
 	xhrRequest.open('get', 'https://sugoku.herokuapp.com/board?difficulty=easy')
+	xhrRequest.send()
+}
+
+GetPuzzleMedium.onclick = function () {
+	var xhrRequest = new XMLHttpRequest()
+	xhrRequest.onload = function () {
+		var response = JSON.parse(xhrRequest.response)
+		console.log(response)
+		board = response.board
+		FillBoard(board)
+	}
+	xhrRequest.open('get', 'https://sugoku.herokuapp.com/board?difficulty=medium')
+	xhrRequest.send()
+}
+
+GetPuzzleHard.onclick = function () {
+	var xhrRequest = new XMLHttpRequest()
+	xhrRequest.onload = function () {
+		var response = JSON.parse(xhrRequest.response)
+		console.log(response)
+		board = response.board
+		FillBoard(board)
+	}
+	xhrRequest.open('get', 'https://sugoku.herokuapp.com/board?difficulty=hard')
 	xhrRequest.send()
 }
 
